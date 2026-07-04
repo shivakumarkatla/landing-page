@@ -1,0 +1,179 @@
+/* =========================================================
+   ANIMATIONS.CSS
+   Keyframes, scroll-reveal states, hero motion, gradient
+   text utility. Reduced-motion overrides live in base.css
+   (global kill-switch) — this file defines the motion itself.
+========================================================= */
+
+/* ===========================================
+   GRADIENT TEXT UTILITY
+=========================================== */
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ===========================================
+   SCROLL REVEAL
+   Elements start hidden/offset via [data-reveal],
+   JS (scrollReveal.js) adds .is-visible via
+   IntersectionObserver when the element enters
+   the viewport.
+=========================================== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for hero text lines (applied alongside [data-reveal]) */
+.reveal--1.is-visible { transition-delay: 0ms; }
+.reveal--2.is-visible { transition-delay: 80ms; }
+.reveal--3.is-visible { transition-delay: 160ms; }
+.reveal--4.is-visible { transition-delay: 240ms; }
+.reveal--5.is-visible { transition-delay: 320ms; }
+.reveal--6.is-visible { transition-delay: 400ms; }
+.reveal--7.is-visible { transition-delay: 480ms; }
+
+/* Stagger children of grid containers automatically (features, pricing, testimonials cards) */
+.features-grid [data-reveal]:nth-child(1).is-visible { transition-delay: 0ms; }
+.features-grid [data-reveal]:nth-child(2).is-visible { transition-delay: 80ms; }
+.features-grid [data-reveal]:nth-child(3).is-visible { transition-delay: 160ms; }
+.features-grid [data-reveal]:nth-child(4).is-visible { transition-delay: 240ms; }
+.features-grid [data-reveal]:nth-child(5).is-visible { transition-delay: 320ms; }
+.features-grid [data-reveal]:nth-child(6).is-visible { transition-delay: 400ms; }
+
+.testimonials-grid [data-reveal]:nth-child(1).is-visible { transition-delay: 0ms; }
+.testimonials-grid [data-reveal]:nth-child(2).is-visible { transition-delay: 120ms; }
+.testimonials-grid [data-reveal]:nth-child(3).is-visible { transition-delay: 240ms; }
+
+.pricing-grid [data-reveal]:nth-child(1).is-visible { transition-delay: 0ms; }
+.pricing-grid [data-reveal]:nth-child(2).is-visible { transition-delay: 120ms; }
+.pricing-grid [data-reveal]:nth-child(3).is-visible { transition-delay: 240ms; }
+
+/* ===========================================
+   HERO BACKGROUND MOTION
+=========================================== */
+.hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+  background: var(--gradient-radial-glow);
+  animation: float 12s ease-in-out infinite;
+}
+
+.hero__blob--1 {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  left: -80px;
+  animation-duration: 14s;
+}
+
+.hero__blob--2 {
+  width: 360px;
+  height: 360px;
+  top: 80px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.3) 0%, rgba(34, 211, 238, 0) 70%);
+  animation-duration: 16s;
+  animation-delay: -4s;
+}
+
+.hero__blob--3 {
+  width: 300px;
+  height: 300px;
+  bottom: -80px;
+  left: 40%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, rgba(99, 102, 241, 0) 70%);
+  animation-duration: 18s;
+  animation-delay: -8s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(20px, -30px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.96);
+  }
+}
+
+/* Subtle animated grid overlay in hero */
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+}
+
+/* ===========================================
+   BADGE PULSE (hero badge dot)
+=========================================== */
+.badge__dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.5);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0);
+  }
+}
+
+/* ===========================================
+   ACCORDION PANEL TRANSITION
+   Panel height is toggled via inline max-height
+   set by JS (accordion.js) to animate smoothly
+   since 'height: auto' cannot be transitioned natively.
+=========================================== */
+.accordion-item__panel {
+  max-height: 0;
+  transition: max-height var(--transition-base), padding var(--transition-base);
+}
+
+.accordion-item__panel.is-open {
+  /* max-height is set inline by JS to the panel's scrollHeight */
+  padding-bottom: var(--space-5);
+}
+
+/* ===========================================
+   REDUCED MOTION OVERRIDES
+   (base.css already disables animation/transition
+   durations globally; this removes transform-based
+   motion specifically for elements that rely on it
+   for visibility, so content is never stuck hidden)
+=========================================== */
+@media (prefers-reduced-motion: reduce) {
+  .hero__blob {
+    animation: none;
+  }
+
+  .badge__dot {
+    animation: none;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

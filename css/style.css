@@ -1,0 +1,262 @@
+/* =========================================================
+   STYLE.CSS
+   Page-specific styles: hero section layout, final
+   responsive refinements, and any one-off overrides
+   that don't belong in the generic component library.
+   This file loads last, after all other CSS files.
+========================================================= */
+
+/* ===========================================
+   HERO SECTION
+=========================================== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(var(--space-24) + var(--space-8));
+  padding-bottom: var(--space-20);
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero__badge {
+  margin-bottom: var(--space-6);
+}
+
+.hero__heading {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-h1);
+  margin-bottom: var(--space-6);
+  max-width: 880px;
+}
+
+.hero__subheading {
+  font-size: var(--fs-body-lg);
+  max-width: 580px;
+  margin-bottom: var(--space-8);
+}
+
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: var(--space-4);
+}
+
+.hero__meta {
+  font-size: var(--fs-xsmall);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-16);
+}
+
+/* ---------- HERO VISUAL (product mockup frame) ---------- */
+.hero__visual {
+  width: 100%;
+  max-width: 960px;
+  margin-bottom: var(--space-16);
+}
+
+.hero__visual-frame {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero__visual-bar {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero__visual-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-border);
+}
+
+/* ---------- HERO DASHBOARD MOCKUP (CSS-only illustration, no image asset needed) ---------- */
+.mockup-dashboard {
+  display: flex;
+  aspect-ratio: 16 / 9;
+  background: var(--color-bg-alt);
+}
+
+.mockup-dashboard__sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  width: 56px;
+  padding-block: var(--space-5);
+  background: var(--color-bg);
+  border-right: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.mockup-dashboard__logo {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  background: var(--gradient-primary);
+}
+
+.mockup-dashboard__nav-item {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-hover);
+}
+
+.mockup-dashboard__nav-item--active {
+  background: var(--color-violet);
+  opacity: 0.6;
+}
+
+.mockup-dashboard__main {
+  flex: 1;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+.mockup-dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.mockup-dashboard__stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.mockup-dashboard__stat-line {
+  display: block;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-hover);
+}
+
+.mockup-dashboard__stat-line--label {
+  width: 60%;
+}
+
+.mockup-dashboard__stat-line--value {
+  width: 40%;
+  height: 14px;
+  background: var(--gradient-primary);
+  opacity: 0.85;
+}
+
+.mockup-dashboard__chart {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.mockup-dashboard__bar {
+  flex: 1;
+  height: var(--bar-h);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  background: var(--gradient-primary);
+  opacity: 0.85;
+}
+
+/* ---------- HERO LOGOS ---------- */
+.hero__logos-label {
+  font-size: var(--fs-xsmall);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-5);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hero__logos-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-8);
+}
+
+.hero__logo-placeholder {
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.hero__logo-placeholder:hover {
+  opacity: 1;
+}
+
+/* ===========================================
+   RESPONSIVE: TABLET AND UP
+=========================================== */
+@media (min-width: 768px) {
+  .hero__actions {
+    flex-direction: row;
+    max-width: none;
+    justify-content: center;
+  }
+}
+
+/* ===========================================
+   RESPONSIVE: DESKTOP AND UP
+=========================================== */
+@media (min-width: 1024px) {
+  .hero {
+    padding-top: calc(var(--space-24) + var(--space-12));
+  }
+}
+
+/* ===========================================
+   PRINT STYLES (basic, for completeness/scalability)
+=========================================== */
+@media print {
+  .navbar,
+  .mobile-menu,
+  .hero__bg,
+  .cta,
+  .footer__social {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+}

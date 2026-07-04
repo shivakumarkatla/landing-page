@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowly — The fastest way to ship great software</title>
+  <meta name="description" content="Flowly helps modern teams plan, build, and ship products faster with a single connected workspace.">
+
+  <!-- Preconnect for font performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets (order matters: tokens -> base -> layout -> components -> animations -> page) -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Skip link for keyboard/screen reader users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- =========================================
+       NAVBAR
+  ========================================== -->
+  <header class="navbar" id="navbar" data-navbar>
+    <div class="container navbar__inner">
+      <a href="#hero" class="navbar__logo" aria-label="Flowly home">
+        <span class="navbar__logo-mark" aria-hidden="true"></span>
+        Flowly
+      </a>
+
+      <nav class="navbar__nav" id="primary-nav" aria-label="Primary">
+        <ul class="navbar__links">
+          <li><a class="nav-link" href="#features">Features</a></li>
+          <li><a class="nav-link" href="#benefits">Benefits</a></li>
+          <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li><a class="nav-link" href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="#" class="btn btn--ghost navbar__login">Log in</a>
+        <a href="#cta" class="btn btn--primary navbar__cta">Get started</a>
+      </div>
+
+      <button
+        class="navbar__toggle"
+        id="navToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        aria-label="Open main menu"
+      >
+        <span class="navbar__toggle-bar" aria-hidden="true"></span>
+        <span class="navbar__toggle-bar" aria-hidden="true"></span>
+        <span class="navbar__toggle-bar" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <!-- Mobile slide-in menu -->
+    <div class="mobile-menu" id="mobileMenu" data-mobile-menu hidden>
+      <nav aria-label="Mobile">
+        <ul class="mobile-menu__links">
+          <li><a class="mobile-menu__link" href="#features">Features</a></li>
+          <li><a class="mobile-menu__link" href="#benefits">Benefits</a></li>
+          <li><a class="mobile-menu__link" href="#testimonials">Testimonials</a></li>
+          <li><a class="mobile-menu__link" href="#pricing">Pricing</a></li>
+          <li><a class="mobile-menu__link" href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__actions">
+        <a href="#" class="btn btn--ghost btn--block">Log in</a>
+        <a href="#cta" class="btn btn--primary btn--block">Get started</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="hero__blob hero__blob--1"></span>
+        <span class="hero__blob hero__blob--2"></span>
+        <span class="hero__blob hero__blob--3"></span>
+        <span class="hero__grid"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <p class="badge hero__badge reveal" data-reveal>
+          <span class="badge__dot" aria-hidden="true"></span>
+          Now with AI-powered workflows
+        </p>
+
+        <h1 class="hero__heading" id="hero-heading">
+          <span class="reveal reveal--1" data-reveal>Ship products</span>
+          <span class="reveal reveal--2 gradient-text" data-reveal>faster than ever</span>
+        </h1>
+
+        <p class="hero__subheading reveal reveal--3" data-reveal>
+          Flowly is the all-in-one workspace where modern teams plan sprints, write docs,
+          and ship code — without switching tabs.
+        </p>
+
+        <div class="hero__actions reveal reveal--4" data-reveal>
+          <a href="#cta" class="btn btn--primary btn--lg">Start free trial</a>
+          <a href="#features" class="btn btn--secondary btn--lg">
+            <span>Watch demo</span>
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M8 5v14l11-7-11-7z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+
+        <p class="hero__meta reveal reveal--5" data-reveal>No credit card required · Free 14-day trial</p>
+
+        <div class="hero__visual reveal reveal--6" data-reveal>
+          <div class="hero__visual-frame" role="img" aria-label="Preview of the Flowly product dashboard showing project boards and analytics">
+            <div class="hero__visual-bar">
+              <span class="hero__visual-dot" aria-hidden="true"></span>
+              <span class="hero__visual-dot" aria-hidden="true"></span>
+              <span class="hero__visual-dot" aria-hidden="true"></span>
+            </div>
+            <div class="mockup-dashboard" aria-hidden="true">
+              <div class="mockup-dashboard__sidebar">
+                <span class="mockup-dashboard__logo"></span>
+                <span class="mockup-dashboard__nav-item mockup-dashboard__nav-item--active"></span>
+                <span class="mockup-dashboard__nav-item"></span>
+                <span class="mockup-dashboard__nav-item"></span>
+                <span class="mockup-dashboard__nav-item"></span>
+              </div>
+              <div class="mockup-dashboard__main">
+                <div class="mockup-dashboard__stats">
+                  <div class="mockup-dashboard__stat-card">
+                    <span class="mockup-dashboard__stat-line mockup-dashboard__stat-line--label"></span>
+                    <span class="mockup-dashboard__stat-line mockup-dashboard__stat-line--value"></span>
+                  </div>
+                  <div class="mockup-dashboard__stat-card">
+                    <span class="mockup-dashboard__stat-line mockup-dashboard__stat-line--label"></span>
+                    <span class="mockup-dashboard__stat-line mockup-dashboard__stat-line--value"></span>
+                  </div>
+                  <div class="mockup-dashboard__stat-card">
+                    <span class="mockup-dashboard__stat-line mockup-dashboard__stat-line--label"></span>
+                    <span class="mockup-dashboard__stat-line mockup-dashboard__stat-line--value"></span>
+                  </div>
+                </div>
+                <div class="mockup-dashboard__chart">
+                  <span class="mockup-dashboard__bar" style="--bar-h: 38%;"></span>
+                  <span class="mockup-dashboard__bar" style="--bar-h: 62%;"></span>
+                  <span class="mockup-dashboard__bar" style="--bar-h: 48%;"></span>
+                  <span class="mockup-dashboard__bar" style="--bar-h: 80%;"></span>
+                  <span class="mockup-dashboard__bar" style="--bar-h: 56%;"></span>
+                  <span class="mockup-dashboard__bar" style="--bar-h: 90%;"></span>
+                  <span class="mockup-dashboard__bar" style="--bar-h: 70%;"></span>
+                  <span class="mockup-dashboard__bar" style="--bar-h: 100%;"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__logos reveal reveal--7" data-reveal>
+          <p class="hero__logos-label">Trusted by teams at</p>
+          <ul class="hero__logos-list">
+            <li class="hero__logo-placeholder">Acme</li>
+            <li class="hero__logo-placeholder">Nimbus</li>
+            <li class="hero__logo-placeholder">Quanta</li>
+            <li class="hero__logo-placeholder">Vertex</li>
+            <li class="hero__logo-placeholder">Orbit</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         FEATURES
+    ========================================== -->
+    <section class="section" id="features" aria-labelledby="features-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Features</p>
+          <h2 class="section-header__title" id="features-heading">Everything your team needs, built in</h2>
+          <p class="section-header__subtitle">
+            Replace five disconnected tools with one fast, focused workspace.
+          </p>
+        </div>
+
+        <div class="grid grid--3 features-grid">
+          <article class="card feature-card" data-reveal>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>
+            </div>
+            <h3 class="feature-card__title">Lightning-fast workflows</h3>
+            <p class="feature-card__desc">Automate repetitive tasks with rules and triggers that run the moment something changes.</p>
+          </article>
+
+          <article class="card feature-card" data-reveal>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5h-2v6l5 3 1-1.6-4-2.4V7z" fill="currentColor"/></svg>
+            </div>
+            <h3 class="feature-card__title">Real-time collaboration</h3>
+            <p class="feature-card__desc">See edits, comments, and cursors live as your team works together in one shared space.</p>
+          </article>
+
+          <article class="card feature-card" data-reveal>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v4H4V4zm0 6h16v4H4v-4zm0 6h10v4H4v-4z" fill="currentColor"/></svg>
+            </div>
+            <h3 class="feature-card__title">Smart project boards</h3>
+            <p class="feature-card__desc">Visualize work the way your team thinks, from kanban boards to timelines to lists.</p>
+          </article>
+
+          <article class="card feature-card" data-reveal>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 1l3 6 6 .9-4.5 4.3 1 6.3L12 15.9 6.5 18.5l1-6.3L3 7.9 9 7l3-6z" fill="currentColor"/></svg>
+            </div>
+            <h3 class="feature-card__title">AI-assisted writing</h3>
+            <p class="feature-card__desc">Draft specs, summarize threads, and generate tasks from meeting notes automatically.</p>
+          </article>
+
+          <article class="card feature-card" data-reveal>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0zm9-5v5l3 3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+            </div>
+            <h3 class="feature-card__title">Powerful integrations</h3>
+            <p class="feature-card__desc">Connect the tools you already use with native integrations and an open API.</p>
+          </article>
+
+          <article class="card feature-card" data-reveal>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+            </div>
+            <h3 class="feature-card__title">Enterprise-grade security</h3>
+            <p class="feature-card__desc">SSO, audit logs, and granular permissions keep your data safe at any scale.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         BENEFITS
+    ========================================== -->
+    <section class="section section--alt" id="benefits" aria-labelledby="benefits-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Benefits</p>
+          <h2 class="section-header__title" id="benefits-heading">Built for how modern teams actually work</h2>
+        </div>
+
+        <div class="benefit-row" data-reveal>
+          <div class="benefit-row__visual">
+            <div class="benefit-row__placeholder" role="img" aria-label="Illustration of a team timeline view">
+              <div class="mockup-timeline" aria-hidden="true">
+                <div class="mockup-timeline__row">
+                  <span class="mockup-timeline__label"></span>
+                  <span class="mockup-timeline__track">
+                    <span class="mockup-timeline__bar" style="--bar-start: 8%; --bar-width: 38%;"></span>
+                  </span>
+                </div>
+                <div class="mockup-timeline__row">
+                  <span class="mockup-timeline__label"></span>
+                  <span class="mockup-timeline__track">
+                    <span class="mockup-timeline__bar mockup-timeline__bar--accent" style="--bar-start: 28%; --bar-width: 48%;"></span>
+                  </span>
+                </div>
+                <div class="mockup-timeline__row">
+                  <span class="mockup-timeline__label"></span>
+                  <span class="mockup-timeline__track">
+                    <span class="mockup-timeline__bar" style="--bar-start: 14%; --bar-width: 30%;"></span>
+                  </span>
+                </div>
+                <div class="mockup-timeline__row">
+                  <span class="mockup-timeline__label"></span>
+                  <span class="mockup-timeline__track">
+                    <span class="mockup-timeline__bar mockup-timeline__bar--accent" style="--bar-start: 50%; --bar-width: 35%;"></span>
+                  </span>
+                </div>
+                <div class="mockup-timeline__row">
+                  <span class="mockup-timeline__label"></span>
+                  <span class="mockup-timeline__track">
+                    <span class="mockup-timeline__bar" style="--bar-start: 5%; --bar-width: 60%;"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="benefit-row__content">
+            <h3>Plan with total clarity</h3>
+            <p>Drag-and-drop timelines and dependency tracking mean nothing falls through the cracks — even across multiple teams and quarters.</p>
+            <ul class="check-list">
+              <li>Automatic dependency mapping</li>
+              <li>Cross-team roadmaps</li>
+              <li>Capacity planning built in</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="benefit-row benefit-row--reverse" data-reveal>
+          <div class="benefit-row__visual">
+            <div class="benefit-row__placeholder" role="img" aria-label="Illustration of analytics charts">
+              <div class="mockup-analytics" aria-hidden="true">
+                <svg class="mockup-analytics__line" viewBox="0 0 300 100" preserveAspectRatio="none">
+                  <polyline points="0,80 40,65 80,70 120,40 160,50 200,20 240,30 300,10" />
+                </svg>
+                <div class="mockup-analytics__bars">
+                  <span style="--bar-h: 30%;"></span>
+                  <span style="--bar-h: 55%;"></span>
+                  <span style="--bar-h: 40%;"></span>
+                  <span style="--bar-h: 75%;"></span>
+                  <span style="--bar-h: 60%;"></span>
+                  <span style="--bar-h: 90%;"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="benefit-row__content">
+            <h3>Ship with confidence</h3>
+            <p>Built-in analytics surface bottlenecks before they slow your team down, with reports that update in real time.</p>
+            <ul class="check-list">
+              <li>Live velocity tracking</li>
+              <li>Automated status reports</li>
+              <li>Custom dashboards</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="stats-row" data-reveal>
+          <div class="stat">
+            <span class="stat__number">10,000+</span>
+            <span class="stat__label">Teams onboard</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">99.99%</span>
+            <span class="stat__label">Uptime SLA</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">4.9/5</span>
+            <span class="stat__label">Average rating</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">40%</span>
+            <span class="stat__label">Faster shipping</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         TESTIMONIALS
+    ========================================== -->
+    <section class="section" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Testimonials</p>
+          <h2 class="section-header__title" id="testimonials-heading">Loved by teams worldwide</h2>
+        </div>
+
+        <div class="grid grid--3 testimonials-grid">
+          <figure class="card testimonial-card" data-reveal>
+            <blockquote class="testimonial-card__quote">
+              “Flowly cut our planning time in half. We finally have one place where engineering and design actually agree on priorities.”
+            </blockquote>
+            <figcaption class="testimonial-card__author">
+              <span class="testimonial-card__avatar" aria-hidden="true">SK</span>
+              <span>
+                <span class="testimonial-card__name">Sara Kim</span>
+                <span class="testimonial-card__role">Head of Product, Nimbus</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="card testimonial-card" data-reveal>
+            <blockquote class="testimonial-card__quote">
+              “We replaced four tools with Flowly in a single quarter. The automation rules alone saved us hours every week.”
+            </blockquote>
+            <figcaption class="testimonial-card__author">
+              <span class="testimonial-card__avatar" aria-hidden="true">JD</span>
+              <span>
+                <span class="testimonial-card__name">James Dela Cruz</span>
+                <span class="testimonial-card__role">Engineering Lead, Quanta</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="card testimonial-card" data-reveal>
+            <blockquote class="testimonial-card__quote">
+              “The best onboarding experience of any SaaS tool we've used. Our whole team was productive on day one.”
+            </blockquote>
+            <figcaption class="testimonial-card__author">
+              <span class="testimonial-card__avatar" aria-hidden="true">AM</span>
+              <span>
+                <span class="testimonial-card__name">Aisha Mensah</span>
+                <span class="testimonial-card__role">COO, Vertex Labs</span>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         PRICING
+    ========================================== -->
+    <section class="section section--alt" id="pricing" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">Pricing</p>
+          <h2 class="section-header__title" id="pricing-heading">Simple pricing that scales with you</h2>
+          <p class="section-header__subtitle">Start free. Upgrade when your team grows.</p>
+        </div>
+
+        <div class="pricing-toggle" data-reveal>
+          <span class="pricing-toggle__label" id="monthlyLabel">Monthly</span>
+          <button
+            type="button"
+            class="switch"
+            id="billingToggle"
+            role="switch"
+            aria-checked="false"
+            aria-labelledby="monthlyLabel yearlyLabel"
+          >
+            <span class="switch__thumb" aria-hidden="true"></span>
+          </button>
+          <span class="pricing-toggle__label" id="yearlyLabel">
+            Yearly <span class="pricing-toggle__badge">Save 20%</span>
+          </span>
+        </div>
+
+        <div class="grid grid--3 pricing-grid">
+          <article class="card pricing-card" data-reveal>
+            <h3 class="pricing-card__name">Starter</h3>
+            <p class="pricing-card__desc">For individuals and small projects.</p>
+            <p class="pricing-card__price">
+              <span class="pricing-card__amount" data-price-monthly="9" data-price-yearly="7">$9</span>
+              <span class="pricing-card__period">/ month</span>
+            </p>
+            <a href="#cta" class="btn btn--secondary btn--block">Get started</a>
+            <ul class="check-list pricing-card__features">
+              <li>Up to 3 projects</li>
+              <li>Basic automation</li>
+              <li>Community support</li>
+              <li>1 GB storage</li>
+            </ul>
+          </article>
+
+          <article class="card pricing-card pricing-card--featured" data-reveal>
+            <p class="badge pricing-card__badge">Most popular</p>
+            <h3 class="pricing-card__name">Pro</h3>
+            <p class="pricing-card__desc">For growing teams who need more power.</p>
+            <p class="pricing-card__price">
+              <span class="pricing-card__amount" data-price-monthly="29" data-price-yearly="23">$29</span>
+              <span class="pricing-card__period">/ month</span>
+            </p>
+            <a href="#cta" class="btn btn--primary btn--block">Get started</a>
+            <ul class="check-list pricing-card__features">
+              <li>Unlimited projects</li>
+              <li>Advanced automation</li>
+              <li>Priority support</li>
+              <li>50 GB storage</li>
+              <li>AI writing assistant</li>
+            </ul>
+          </article>
+
+          <article class="card pricing-card" data-reveal>
+            <h3 class="pricing-card__name">Enterprise</h3>
+            <p class="pricing-card__desc">For organizations with custom needs.</p>
+            <p class="pricing-card__price">
+              <span class="pricing-card__amount">Custom</span>
+            </p>
+            <a href="#cta" class="btn btn--secondary btn--block">Contact sales</a>
+            <ul class="check-list pricing-card__features">
+              <li>Everything in Pro</li>
+              <li>SSO &amp; SAML</li>
+              <li>Dedicated success manager</li>
+              <li>Unlimited storage</li>
+              <li>Custom SLA</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         FAQ
+    ========================================== -->
+    <section class="section" id="faq" aria-labelledby="faq-heading">
+      <div class="container container--narrow">
+        <div class="section-header" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <h2 class="section-header__title" id="faq-heading">Frequently asked questions</h2>
+        </div>
+
+        <div class="accordion" data-reveal>
+          <div class="accordion-item">
+            <h3 class="accordion-item__heading">
+              <button class="accordion-item__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-1" id="faq-trigger-1">
+                Can I cancel my subscription anytime?
+                <svg class="accordion-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-item__panel" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1" hidden>
+              <p>Yes. You can cancel your plan at any time from your account settings — no questions asked, and you'll retain access until the end of your billing period.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-item__heading">
+              <button class="accordion-item__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-2" id="faq-trigger-2">
+                Is there a free trial?
+                <svg class="accordion-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-item__panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2" hidden>
+              <p>Every plan includes a free 14-day trial with full access to features. No credit card is required to get started.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-item__heading">
+              <button class="accordion-item__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-3" id="faq-trigger-3">
+                Can I switch plans later?
+                <svg class="accordion-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-item__panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3" hidden>
+              <p>Absolutely. You can upgrade or downgrade your plan at any time, and we'll prorate the difference automatically.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-item__heading">
+              <button class="accordion-item__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-4" id="faq-trigger-4">
+                Do you offer discounts for nonprofits or students?
+                <svg class="accordion-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-item__panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4" hidden>
+              <p>Yes, we offer special pricing for verified nonprofits, students, and educational institutions. Contact our sales team for details.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-item__heading">
+              <button class="accordion-item__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-5" id="faq-trigger-5">
+                How secure is my data?
+                <svg class="accordion-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-item__panel" id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5" hidden>
+              <p>We use industry-standard encryption in transit and at rest, with SOC 2 compliance and regular third-party security audits.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         CTA
+    ========================================== -->
+    <section class="cta" id="cta" aria-labelledby="cta-heading">
+      <div class="container cta__inner" data-reveal>
+        <h2 class="cta__heading" id="cta-heading">Ready to ship faster?</h2>
+        <p class="cta__subheading">Join thousands of teams already building better with Flowly.</p>
+        <div class="cta__actions">
+          <a href="#" class="btn btn--primary btn--lg">Start your free trial</a>
+          <a href="#" class="btn btn--ghost btn--lg">Talk to sales</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#hero" class="navbar__logo footer__logo" aria-label="Flowly home">
+            <span class="navbar__logo-mark" aria-hidden="true"></span>
+            Flowly
+          </a>
+          <p class="footer__tagline">The fastest way for modern teams to plan, build, and ship.</p>
+          <ul class="footer__social" aria-label="Social media links">
+            <li><a href="#" aria-label="Flowly on X (Twitter)" class="footer__social-link">𝕏</a></li>
+            <li><a href="#" aria-label="Flowly on LinkedIn" class="footer__social-link">in</a></li>
+            <li><a href="#" aria-label="Flowly on GitHub" class="footer__social-link">GH</a></li>
+          </ul>
+        </div>
+
+        <nav class="footer__col" aria-label="Product">
+          <h3 class="footer__heading">Product</h3>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Roadmap</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Company">
+          <h3 class="footer__heading">Company</h3>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Resources">
+          <h3 class="footer__heading">Resources</h3>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Help center</a></li>
+            <li><a href="#">API reference</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col footer__newsletter">
+          <h3 class="footer__heading">Stay updated</h3>
+          <form class="newsletter-form" action="#" method="post">
+            <label class="visually-hidden" for="newsletterEmail">Email address</label>
+            <input
+              class="newsletter-form__input"
+              type="email"
+              id="newsletterEmail"
+              name="email"
+              placeholder="you@company.com"
+              required
+              autocomplete="email"
+            >
+            <button class="btn btn--primary newsletter-form__submit" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="currentYear">2026</span> Flowly, Inc. All rights reserved.</p>
+        <ul class="footer__legal">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Settings</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts (deferred, loaded in dependency order) -->
+  <script src="js/navbar.js" defer></script>
+  <script src="js/scrollReveal.js" defer></script>
+  <script src="js/accordion.js" defer></script>
+  <script src="js/pricingToggle.js" defer></script>
+  <script src="js/smoothScroll.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
